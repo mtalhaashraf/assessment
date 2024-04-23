@@ -1,4 +1,3 @@
-
 import { ProductsGrid } from "@/components/ProductsGrid";
 import { fetchProducts } from "@/hooks";
 import { QueryClient, dehydrate } from "@tanstack/react-query";
@@ -7,10 +6,9 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+      className={`flex min-h-screen flex-col items-center justify-between p-8 md:p-12 lg:p-24 ${inter.className}`}
     >
       <ProductsGrid />
     </main>
@@ -18,17 +16,17 @@ export default function Home() {
 }
 
 export async function getStaticProps() {
-  const queryClient = new QueryClient()
+  const queryClient = new QueryClient();
 
   await queryClient.prefetchInfiniteQuery({
-    queryKey: ['products'],
+    queryKey: ["products"],
     queryFn: fetchProducts,
-    initialPageParam: 1
-  })
+    initialPageParam: 1,
+  });
 
   return {
     props: {
       dehydratedState: dehydrate(queryClient),
     },
-  }
+  };
 }

@@ -74,16 +74,15 @@
     @apply bg-background text-foreground;
   }
   form {
-    @apply flex flex-col gap-8 p-20 border border-black/10 rounded-md;
+    @apply flex flex-col gap-8 p-8 md:p-12 lg:p-20 border border-black/10 rounded-md;
   }
   .fieldset {
     @apply flex items-center gap-2;
   }
   input {
-    @apply border border-border rounded-sm px-2 py-1 active:outline-ring
+    @apply border border-border rounded-sm px-2 py-1 active:outline-ring;
   }
   label {
-    @apply font-semibold whitespace-nowrap w-max text-primary
+    @apply font-semibold whitespace-nowrap w-max text-primary;
   }
-
 }
