@@ -7,7 +7,7 @@
 2. Navigate to project directory:
 
     ```bash
-    cd fe-assessment
+    cd assessment
     ```
 
 3. Install dependencies using pnpm:
